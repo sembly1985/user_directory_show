@@ -11,12 +11,14 @@ while(1):
         list_array.append(line);
 ''' print each item in list '''
 for i in range(0,len(list_array)):
-    print i, list_array[i];
+    space_Index=str.find(list_array[i],' ')
+    print (i, list_array[i][0:space_Index]);
 ''' input item '''
-item=raw_input('plsea input item:');
+item=input('plsea input item:');
 try:
     list_item=list_array[int(item)];
-    tmp_array=str.split(list_item,' ');
-    os.startfile(tmp_array[1]);
+    space_Index=str.find(list_item,' ')
+    foldStr=list_item[space_Index+1:]
+    os.startfile(foldStr);
 except:
-    print 'error select';
+    print('error select');
